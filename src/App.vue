@@ -1,29 +1,47 @@
+<!--
+ * @Author: Code-HHX
+ * @Date: 2022-03-24 11:49:13
+ * @LastEditors: Code-HHX
+ * @LastEditTime: 2022-03-24 12:12:57
+ * @Description: 
+-->
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  name:'home',
+  data(){
+    return{
+      
     }
-  }
+  },
+  mounted(){
+    //#region 滚动 使输入框处在窗口的中间高度
+    /*
+		window.onresize = function () {
+			document.activeElement.scrollIntoView({
+				behavior: 'smooth',
+				block: 'center',
+			})
+		}
+    */
+    //#endregion
+  },
+}
+</script>
+
+<style lang="less" scoped>
+body{
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#app {
+  width: 100%;
+  height: 100%;
 }
 </style>
