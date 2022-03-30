@@ -2,7 +2,7 @@
  * @Author: Code-HHX
  * @Date: 2022-03-24 12:16:38
  * @LastEditors: Code-HHX
- * @LastEditTime: 2022-03-24 13:59:13
+ * @LastEditTime: 2022-03-24 16:23:47
  * @Description:
  */
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
   runtimeCompiler: true, //关键点在这
   // 调整内部的 webpack 配置。
   // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/webpack.md
-  chainWebpack: () => {},
+  chainWebpack: config => {
+    config.resolve.symlinks(true);
+  },
   configureWebpack: () => {},
 
   // vue-loader 选项
@@ -42,7 +44,7 @@ module.exports = {
   // CSS 相关选项
   css: {
     // 将组件内的 CSS 提取到一个单独的 CSS 文件 (只用在生产环境中)
-    extract: true,
+    extract: process.env.NODE_ENV == "prod" ? true : false,
 
     // 是否开启 CSS source map？
     sourceMap: false,
