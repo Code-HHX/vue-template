@@ -1,11 +1,23 @@
 /*
  * @Author: Code-HHX
- * @Date: 2022-03-24 10:35:21
+ * @Date: 2022-03-24 10:46:18
  * @LastEditors: Code-HHX
- * @LastEditTime: 2022-03-24 14:32:21
- * @Description: api 统一出口
+ * @LastEditTime: 2022-04-01 17:49:10
+ * @Description: Test
  */
 
-const api = {};
+import {
+  requestGet,
+  requestPost,
+  requestPostForm,
+  requestFileUpload
+} from "../config/http-json";
 
-export default api;
+const test = {
+  async testInterface(params) {
+    let response = await requestPost("/test/add", params);
+    return response;
+  }
+};
+
+export default test;

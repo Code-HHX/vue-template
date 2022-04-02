@@ -2,7 +2,7 @@
  * @Author: Code-HHX
  * @Date: 2022-03-24 12:16:38
  * @LastEditors: Code-HHX
- * @LastEditTime: 2022-03-24 16:23:47
+ * @LastEditTime: 2022-04-01 17:50:38
  * @Description:
  */
 module.exports = {
@@ -81,7 +81,17 @@ module.exports = {
     https: false,
     hotOnly: false,
     // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#配置代理
-    proxy: null, // string | Object
+    proxy: {
+      //跨域配置
+      "/api": {
+        target: process.env.VUE_APP_BASE_API,
+        changOrigin: true, //允许跨域
+        pathRewrite: {
+          //重写路径
+          "^/api": ""
+        }
+      }
+    },
     before: app => {
       // `app` 是一个 express 实例
     }

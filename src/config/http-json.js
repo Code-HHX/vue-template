@@ -2,7 +2,7 @@
  * @Author: Code-HHX
  * @Date: 2022-03-24 13:54:24
  * @LastEditors: Code-HHX
- * @LastEditTime: 2022-03-24 14:12:08
+ * @LastEditTime: 2022-04-01 17:51:03
  * @Description:
  */
 
@@ -14,7 +14,8 @@ axios.defaults.headers["Content-Type"] = "application/json";
 
 //创建axios实例
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API,
+  baseURL:
+    process.env.NODE_ENV == "dev" ? "/api" : process.env.VUE_APP_BASE_API, //本地测试跨域配置
   timeout: 130000, //请求超时
   withCredentials: true //跨域请求时发送Cookie
 });
