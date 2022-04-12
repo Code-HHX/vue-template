@@ -2,7 +2,7 @@
  * @Author: Code-HHX
  * @Date: 2022-03-24 11:49:13
  * @LastEditors: Code-HHX
- * @LastEditTime: 2022-03-24 14:14:05
+ * @LastEditTime: 2022-04-12 16:18:53
  * @Description:
 -->
 
@@ -26,7 +26,7 @@ H5 适配 Rem 解决方案
    module.exports = {
    plugins:{
    'postcss-pxtorem':{
-   rooValue:37.5,// 设计图页面尺寸如果是 750 就填 75,是 640 就填入 64,为了适配 vantUI 我们保持和 vant 官方一致
+   rootValue:37.5,// 设计图页面尺寸如果是 750 就填 75,是 640 就填入 64,为了适配 vantUI 我们保持和 vant 官方一致
    propList:['*']
    }
    }
