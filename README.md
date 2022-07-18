@@ -41,6 +41,7 @@ H5 适配 Rem 解决方案
 3. npm run prod 生产模式
 4. npm run build:test 测试环境打包
 5. npm run build:prod 生产环境打包
+6. npm run lint 格式化代码
 
 #### 参与贡献
 
